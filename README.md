@@ -1,12 +1,12 @@
 # Chameleon
 
-Welcome to Chameleon—a real-time, browser-based social-deduction game.
+Welcome to Chameleon: a real-time, browser-based social-deduction game.
 One player is the Chameleon and tries to blend in, while everyone else knows the secret word.
 Spot the imposter before the chameleon figures out the secret word!
 
 ## Features
 
-- Join with a simple URL—no login required
+- Join with a simple URL, no login required
 - Live viewer count and "New Game" button
 - One-round word assignment with one hidden Chameleon
 - Mobile-friendly, responsive layout
