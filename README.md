@@ -11,7 +11,6 @@ Spot the imposter before the chameleon figures out the secret word!
 - One-round word assignment with one hidden Chameleon
 - Mobile-friendly, responsive layout
 
-
 ## How to run
 
 1. Clone the repository
@@ -31,3 +30,12 @@ Spot the imposter before the chameleon figures out the secret word!
 7. After each round, players can discuss and vote on who they think the Chameleon is. At least half the players must agree to vote someone out or the game continues.
 8. Continue until the Chameleon is identified, the word is guessed, or an innocent player is voted out.
 9. Press "New Game" again to start the next game.
+
+## Future Plans
+
+- Add a lobby system to allow players to join before starting the game and name tags for players.
+- Implement info button (or just section) to show the players how to play.
+- Add an accuse button to allow players to accuse others of being the Chameleon.
+- Add a timer for each round to increase the pressure.
+- Change name to "The Mole".
+- Change theme and add more visual styling.
