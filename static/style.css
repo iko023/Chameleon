@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Smokum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 /* Base reset */
 * {
     margin: 0;
@@ -5,15 +8,13 @@
     box-sizing: border-box;
 }
 
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3KUBGEe.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+
+:root {
+  --terracotta   : #d35400b9;  /* deep clay */
+  --sand         : #EFE6DD;  /* pale adobe */
+  --cactus-green : #6A8E6D;  /* muted desert plant */
+  --brown        : #8E5341;  /* leather/ranch tack */
+  --off-white    : #F7F3E9;  /* background accent */
 }
 
 /* Full-height flex container */
@@ -24,32 +25,50 @@ body {
     justify-content: flex-start;            /* align content to the top */
     min-height: 100vh;
     padding: 2rem 1rem 1rem;                /* top padding for breathing room */
-    font-family: 'Roboto', sans-serif; 
-    background: #f7f7f7;
-    color: #333;
+    background: var(--off-white);
     text-align: center;
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--brown);
+}
+
+.container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(211, 117, 70, 0.5);  /* semitransparent terracotta */
+  border: 4px solid var(--brown);
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.2);
+  font-size: 1.5rem;
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-size: 4.5rem;
     margin-bottom: 1rem;
+    font-family: "Smokum", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Button styling */
 button {
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    margin: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #07c700;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  background-color: var(--terracotta);
+  border: 3px solid var(--brown);
+  border-radius: 4px;
+  color: var(--off-white);
+  padding: .75rem 3rem;
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.1rem;
+  box-shadow: inset 0 -3px 0 var(--brown), 0 3px 6px rgba(0,0,0,.15);
 }
 
 button:hover {
-    background-color: #118a0c;
+  background-color: #c24e0096;
+  transform: translateY(-1px);
 }
 
 /* Viewer info */

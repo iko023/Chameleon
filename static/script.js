@@ -11,7 +11,7 @@ async function poll() {
     const display = document.getElementById('word-display');
 
     if (!gs.started) {
-        display.innerText = 'Waiting to start…';
+        display.innerText = 'Press "New Game" to start!';
     } else if (gs.you_mole) {
         display.innerText = 'You are the Mole!';
     } else {
