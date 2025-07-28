@@ -1,4 +1,4 @@
-# List of words for the chameleon game (most AI generated)
+# List of words for the mole game (most AI generated)
 # Consider making an fetch request from AI to generate new word each time instead of using list?
 
 word_list = [

@@ -14,7 +14,7 @@ bag = []
 game = {
     'started' : False,
     'word' : None,
-    'chameleon' : None,
+    'mole' : None,
     'words' : bag
 }
 
@@ -63,10 +63,10 @@ def status():
 
 @app.route('/start', methods=['POST'])
 def start_game():
-  """ Assigns chameleon, draws word and starts game. """
+  """ Assigns the mole, draws word and starts game. """
   if not game['started'] and players:
     sids = list(players.keys())
-    game['chameleon'] = random.choice(sids)
+    game['mole'] = random.choice(sids)
     game['word'] = draw_word()
     game['started'] = True
   return jsonify({'status': 'ok'})
@@ -79,8 +79,8 @@ def game_state():
   sid = session.get('sid')
   payload = {
     'started': game['started'],
-    'word': game['word'] if sid != game['chameleon'] else None,
-    'you_chameleon': sid == game['chameleon']
+    'word': game['word'] if sid != game['mole'] else None,
+    'you_mole': sid == game['mole']
   }
   return jsonify(payload)
 
@@ -88,7 +88,7 @@ def game_state():
 @app.route('/reset', methods=['POST'])
 def reset_game():
   """ Restarts game and clears game state. """
-  game.update({'started': False, 'word': None, 'chameleon': None})
+  game.update({'started': False, 'word': None, 'mole': None})
   return jsonify({'status': 'reset'})
 
 

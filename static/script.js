@@ -12,8 +12,8 @@ async function poll() {
 
     if (!gs.started) {
         display.innerText = 'Waiting to start…';
-    } else if (gs.you_chameleon) {
-        display.innerText = 'You are the Chameleon!';
+    } else if (gs.you_mole) {
+        display.innerText = 'You are the Mole!';
     } else {
         display.innerText = gs.word;
     }
