@@ -39,15 +39,22 @@ def draw_word():
 
 
 def register_player():
-  """ Registers new ip adresses as players. """
-  sid = session.get('sid')
-  if not sid:
-    sid = str(uuid.uuid4())
+    """ Registers new ip adresses as players. """
+    sid = session.get('sid') or str(uuid.uuid4())
     session['sid'] = sid
-  players[sid] = {
-    'ip': request.remote_addr,
-    'last_seen': time.time()
-  }
+    name = session.get('name', 'Guest')
+    players[sid] = {
+        'name': name,
+        'last_seen': time.time()
+    }
+
+
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.get_json()
+    name = data.get('name', '').strip() or 'Guest'
+    session['name'] = name
+    return jsonify(status='ok'), 200
 
 
 @app.route('/status')
@@ -58,7 +65,10 @@ def status():
     for sid, info in list(players.items()):
         if info['last_seen'] < cutoff:
             players.pop(sid)                   
-    return jsonify(count=len(players))
+    return jsonify(
+      count=len(players),
+      players=[info['name'] for info in players.values()]
+    )
 
 
 @app.route('/start', methods=['POST'])
