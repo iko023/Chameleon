@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>The Mole</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -22,7 +22,17 @@
     </div>
     </div>
     
-    <h1>The Mole</h1>
+    <h1>
+        <img src="{{ url_for('static', filename='cactus.png') }}"
+        alt="cactus icon"
+        class="header-icon" />
+
+        The Mole
+        <img src="{{ url_for('static', filename='cactus.png') }}"
+
+        alt="cactus icon"
+        class="header-icon" />
+    </h1>
     <div id="viewer-info">
         <strong>Players:</strong> <span id="count">0</span>
     </div>
@@ -30,8 +40,22 @@
     <div id="game-info" style="margin-top:1em" class="container">
         <p id="word-display"></p>
     </div>
-    
-    <button id="newgame-btn" class="btn btn-success">New Game</button>
+
+    <button id="newgame-btn" style="margin: 1em" class="btn btn-success">New Game</button>
+
+    <div id="rules" style="margin-top:1em" class="rules-container">
+        <h2>Game Rules</h2>
+
+        <p>Take turns describing the word you see with a single word clue.</p>
+
+        <p>The Mole must try to blend in with the other players.</p>
+
+        <p>After each round, players can discuss and vote on who they think the Mole is.</p>
+
+        <p>At least half the players must agree to vote someone out or the game continues.</p>
+
+        <p>Guess who the Mole is before they figure out the word!</p>
+    </div>
 
     <script src="{{url_for('static', filename='script.js')}}"></script>
 

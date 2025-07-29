@@ -48,8 +48,8 @@ async function poll() {
     }
 }
 
-// Refress every two seconds
-setInterval(poll, 2000);
+// Refresh every second
+setInterval(poll, 1000);
 poll();
 
 // New Game button

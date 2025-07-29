@@ -10,11 +10,15 @@
 
 
 :root {
-  --terracotta   : #d35400b9;  /* deep clay */
-  --sand         : #EFE6DD;  /* pale adobe */
-  --cactus-green : #6A8E6D;  /* muted desert plant */
-  --brown        : #8E5341;  /* leather/ranch tack */
-  --off-white    : #F7F3E9;  /* background accent */
+  --terracotta       : #d35400b9;  /* button */
+  --light-terracotta : #c24e0096;  /* button hover */
+  --sand             : #EFE6DD;    /* background */
+  --brown            : #8E5341;    /* text and border */
+  --off-white        : #F7F3E9;    /* button text */
+  --shadow           : #49281e;    /* shadow color */
+  
+  --cactus-green     : #6a8e6d9a;  /* rules background */
+  --light-brown      : #E5B497;    /* border and background */
 }
 
 /* Full-height flex container */
@@ -25,7 +29,7 @@ body {
     justify-content: flex-start;            /* align content to the top */
     min-height: 100vh;
     padding: 2rem 1rem 1rem;                /* top padding for breathing room */
-    background: var(--off-white);
+    background: var(--sand);
     text-align: center;
     font-family: "Special Elite", system-ui;
     font-weight: 400;
@@ -34,14 +38,13 @@ body {
 }
 
 .container {
-  max-width: 400px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background: rgba(211, 117, 70, 0.5);  /* semitransparent terracotta */
+  background: var(--light-brown);  /* semitransparent terracotta */
   border: 4px solid var(--brown);
   border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0,0,0,.2);
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 h1 {
@@ -50,6 +53,14 @@ h1 {
     font-family: "Smokum", serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.header-icon {
+    width: clamp(3.5rem, 4vw, 5rem);
+    height: auto;
+    vertical-align: middle;    /* aligns the cactus with your text */
+    margin: 0 8px;             /* space around each icon */
+    margin-bottom: 1rem;
 }
 
 /* Button styling */
@@ -63,11 +74,10 @@ button {
   font-weight: 400;
   font-style: normal;
   font-size: 1.1rem;
-  box-shadow: inset 0 -3px 0 var(--brown), 0 3px 6px rgba(0,0,0,.15);
 }
 
 button:hover {
-  background-color: #c24e0096;
+  background-color: var(--light-terracotta);
   transform: translateY(-1px);
 }
 
@@ -98,7 +108,7 @@ button:hover {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--shadow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,4 +138,23 @@ button:hover {
   width: 100%;
   font-size: 1rem;
   padding: 0.75rem;
+}
+
+.rules-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--cactus-green); 
+  border: 4px solid var(--brown);
+  border-radius: 8px;
+  font-size: .875rem;
+}
+
+p + p {
+  margin-top: 1rem;     /* only paragraphs preceded by another <p> get top margin */
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
