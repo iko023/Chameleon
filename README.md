@@ -33,7 +33,6 @@ Spot the imposter before the Mole figures out the secret word!
 
 ## Future Plans
 
-- Add a lobby system to allow players to join before starting the game and name tags for players.
 - Implement info button (or just section) to show the players how to play.
 - Add an accuse button to allow players to accuse others of being the Mole.
 - Add a timer for each round to increase the pressure.

@@ -64,3 +64,15 @@ document.getElementById('newgame-btn').onclick = async () => {
     poll();
 };
 
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('rules-toggle');
+  const overlay   = document.getElementById('rules-overlay');
+
+  toggleBtn.addEventListener('click', () => {
+    overlay.classList.toggle('open');
+    toggleBtn.textContent = overlay.classList.contains('open')
+      ? 'Close'
+      : 'Game Rules';
+  });
+});
+

@@ -23,39 +23,39 @@
     </div>
     
     <h1>
-        <img src="{{ url_for('static', filename='cactus.png') }}"
-        alt="cactus icon"
-        class="header-icon" />
-
+        <img src="{{ url_for('static', filename='cactus.png') }}" alt="cactus icon" class="header-icon" />
         The Mole
-        <img src="{{ url_for('static', filename='cactus.png') }}"
-
-        alt="cactus icon"
-        class="header-icon" />
+        <img src="{{ url_for('static', filename='cactus.png') }}" alt="cactus icon" class="header-icon" />
     </h1>
     <div id="viewer-info">
         <strong>Players:</strong> <span id="count">0</span>
     </div>
 
-    <div id="game-info" style="margin-top:1em" class="container">
+    <div id="game-info" style="margin-top:1em" class="dashed">
         <p id="word-display"></p>
     </div>
 
     <button id="newgame-btn" style="margin: 1em" class="btn btn-success">New Game</button>
+    
+    <!-- Rules Overlay (hidden by default) -->
+    <div id="rules-overlay">
+        <div id="rules" style="margin-top:1em" class="rules-container">
+            <h2>Game Rules</h2>
 
-    <div id="rules" style="margin-top:1em" class="rules-container">
-        <h2>Game Rules</h2>
+            <p>Take turns describing the word you see with a single word clue.</p>
 
-        <p>Take turns describing the word you see with a single word clue.</p>
+            <p>The Mole must try to blend in with the other players.</p>
 
-        <p>The Mole must try to blend in with the other players.</p>
+            <p>After each round, players can discuss and vote on who they think the Mole is.</p>
 
-        <p>After each round, players can discuss and vote on who they think the Mole is.</p>
+            <p>At least half the players must agree to vote someone out or the game continues.</p>
 
-        <p>At least half the players must agree to vote someone out or the game continues.</p>
-
-        <p>Guess who the Mole is before they figure out the word!</p>
+            <p>Guess who the Mole is before they figure out the word!</p>
+        </div>
     </div>
+
+    <!-- Fixed footer button -->
+    <button id="rules-toggle">Game Rules</button>
 
     <script src="{{url_for('static', filename='script.js')}}"></script>
 
