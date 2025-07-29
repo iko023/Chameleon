@@ -33,7 +33,7 @@ Spot the imposter before the Mole figures out the secret word!
 
 ## Future Plans
 
-- Implement info button (or just section) to show the players how to play.
+- Change body font to be "Maiden Orange" and move "Special Elite" to specific elements.
 - Add an accuse button to allow players to accuse others of being the Mole.
 - Add a timer for each round to increase the pressure.
 - Change theme and add more visual styling.
