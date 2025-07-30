@@ -11,7 +11,7 @@
 
 
 :root {
-  --terracotta       : #D37E45;  /* button */
+  --terracotta       : #D37E45;    /* button */
   --light-terracotta : #c24e0096;  /* button hover */
   --sand             : #EFE6DD;    /* background */
   --brown            : #8E5341;    /* text and border */
@@ -19,12 +19,11 @@
   --dark-brown       : #613021;    /* shadow and text */
   
   --cactus-green     : #6A8E6D;    /* rules background */
-  --light-cactus     : #8ea591;  /* rules border */
+  --light-cactus     : #8ea591;    /* rules border */
   --light-brown      : #E5B497;    /* border and background */
   --blue             : #395272;    /* border */
-  --shade            : #49250d46;    /* shade */
+  --shade            : #49250d46;  /* shade */
 }
-
 
 /* Full-height flex container */
 body {
@@ -36,7 +35,7 @@ body {
     padding: 2rem 1rem 1rem;                /* top padding for breathing room */
     background: var(--sand);
     text-align: center;
-    font-family: "Special Elite", system-ui;
+    font-family: "Maiden Orange", serif;
     font-weight: 400;
     font-style: normal;
     color: var(--dark-brown);
@@ -105,6 +104,7 @@ button:hover {
 
 /* Word display */
 #word-display {
+    font-family: "Special Elite", system-ui;
     font-size: 1.2rem;
     margin: 1rem 0;
     font-weight: 500;
@@ -200,7 +200,6 @@ button:hover {
   border: 4px solid var(--brown);
   border-radius: 8px;
   font-size: 1rem;
-  font-family: "Maiden Orange", serif;
 }
 
 #rules-toggle {
@@ -252,5 +251,3 @@ button:hover {
 #rules-overlay.open #rules-container {
   transform: translateY(0);
 }
-
-

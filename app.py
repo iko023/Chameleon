@@ -12,10 +12,10 @@ app.secret_key = 'ogisuhvm32989wifkasnmqi0ewnwfe'
 players = {}
 bag = []
 game = {
-    'started' : False,
-    'word' : None,
-    'mole' : None,
-    'words' : bag
+  'started' : False,
+  'word' : None,
+  'mole' : None,
+  'words' : bag
 }
 
 #################################################
@@ -24,51 +24,51 @@ game = {
 
 
 def init_bag():
-    """ Initiate bag of words. """
-    global bag
-    bag = list(set(word_list.copy()))
-    random.shuffle(bag)
+  """ Initiate bag of words. """
+  global bag
+  bag = list(set(word_list.copy()))
+  random.shuffle(bag)
 
 
 def draw_word():
-    """ Draw and remove word from bag. """
-    global bag
-    if not bag:
-        init_bag()
-    return bag.pop()
+  """ Draw and remove word from bag. """
+  global bag
+  if not bag:
+    init_bag()
+  return bag.pop()
 
 
 def register_player():
-    """ Registers new ip adresses as players. """
-    sid = session.get('sid') or str(uuid.uuid4())
-    session['sid'] = sid
-    name = session.get('name', 'Guest')
-    players[sid] = {
-        'name': name,
-        'last_seen': time.time()
-    }
+  """ Registers new ip adresses as players. """
+  sid = session.get('sid') or str(uuid.uuid4())
+  session['sid'] = sid
+  name = session.get('name', 'Guest')
+  players[sid] = {
+    'name': name,
+    'last_seen': time.time()
+  }
 
 
 @app.route('/register', methods=['POST'])
 def register():
-    data = request.get_json()
-    name = data.get('name', '').strip() or 'Guest'
-    session['name'] = name
-    return jsonify(status='ok'), 200
+  data = request.get_json()
+  name = data.get('name', '').strip() or 'Guest'
+  session['name'] = name
+  return jsonify(status='ok'), 200
 
 
 @app.route('/status')
 def status():
-    """ Registers player and removes inactive players after 5 sec. Returns player count. """
-    register_player()
-    cutoff = time.time() - 5                  
-    for sid, info in list(players.items()):
-        if info['last_seen'] < cutoff:
-            players.pop(sid)                   
-    return jsonify(
-      count=len(players),
-      players=[info['name'] for info in players.values()]
-    )
+  """ Registers player and removes inactive players after 5 sec. Returns player count. """
+  register_player()
+  cutoff = time.time() - 5                  
+  for sid, info in list(players.items()):
+    if info['last_seen'] < cutoff:
+      players.pop(sid)                   
+  return jsonify(
+    count=len(players),
+    players=[info['name'] for info in players.values()]
+  )
 
 
 @app.route('/start', methods=['POST'])
@@ -104,8 +104,8 @@ def reset_game():
 
 @app.route('/')
 def index():
-    """ Renders html. """
-    return render_template('index.html')
+  """ Renders html. """
+  return render_template('index.html', players=players)
 
 
 
